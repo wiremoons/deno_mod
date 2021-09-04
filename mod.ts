@@ -3,6 +3,8 @@
  * @module https://github.com/wiremoons/deno_mod/mod.ts
  * @brief A collection of modules written in TypeScript for common Deno programming tasks.
  *
+ * @link https://raw.githubusercontent.com/wiremoons/deno_mod/0.2.0/mod.ts
+ *
  * @author     simon rowe <simon@wiremoons.com>
  * @license    open-source released under "MIT License"
  *
