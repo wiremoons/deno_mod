@@ -8,13 +8,13 @@
  *
  * @date originally created: 04 Sep 2021
  *
- * @details Checks for for a specific TypeScript type (string, number, etc) and affirms that type if its correct.
+ * @details Checks for a specific TypeScript type (string, number, etc) and affirms that type if its correct.
  * @requires `none`
  */
 
 /** Type Guard for number */
 // deno-lint-ignore no-explicit-any
-export function _isNumber(arg: any): arg is number {
+export function isNumber(arg: any): arg is number {
     return arg !== undefined;
 }
 
