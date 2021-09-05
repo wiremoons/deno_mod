@@ -14,4 +14,6 @@
  */
 export * from "./exists_dir.ts";
 export * from "./exists_file.ts";
+export * from "./to_title_case.ts"
 export * from "./type_guard.ts";
+
