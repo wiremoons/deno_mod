@@ -13,21 +13,23 @@ You are welcome to use them as well if you wish.
 
 ## Import Usage
 
+Below describes two approaches to including the `deno_mod` into a project using `import`.
+
 ### Versions tags
 
 Link to the `mod.ts` file in this GitHub repo using the module tag for the version that is to be used. In the example
-below the version tag `0.2.0` is specified.
+below the version tag `0.3.0` is specified.
 
 The recommended approach is to choose a version so you are not impacted by any furture changes unexpectedly. The example
-below explicitly states the **version tag** `0.2.0` instead:
+below explicitly states the **version tag** `0.3.0` instead:
 
-```javascript
-https://raw.githubusercontent.com/wiremoons/deno_mod/0.2.0/mod.ts
+```typescript
+https://raw.githubusercontent.com/wiremoons/deno_mod/0.3.0/mod.ts
 ```
 
 The import url for the **current version** is always:
 
-```javascript
+```typescript
 https://raw.githubusercontent.com/wiremoons/deno_mod/main/mod.ts
 ```
 
@@ -36,13 +38,13 @@ https://raw.githubusercontent.com/wiremoons/deno_mod/main/mod.ts
 Import the specific modules to be used. For example, to only use the modules: `existsFile`, `existsDir`, and `isString`
 the follow import statement would be used:
 
-```javascript
-import {existsFile, existsDir, isString} from "https://raw.githubusercontent.com/wiremoons/deno_mod/0.2.0/mod.ts";
+```typescript
+import {existsFile, existsDir, isString} from "https://raw.githubusercontent.com/wiremoons/deno_mod/0.3.0/mod.ts";
 ```
 
 Any of the modules can then be accessed using their name as follows:
 
-```javascript
+```typescript
 if (existsFile("/some/file/path.txt")) {
     console.log("File exists!");
 } else {
@@ -54,13 +56,13 @@ if (existsFile("/some/file/path.txt")) {
 
 Alternatively it is possible to import all the available modules:
 
-```javascript
-import * as my_deno_mod from "https://raw.githubusercontent.com/wiremoons/deno_mod/0.2.0/mod.ts";
+```typescript
+import * as my_deno_mod from "https://raw.githubusercontent.com/wiremoons/deno_mod/0.3.0/mod.ts";
 ```
 
 Any module can then be accessed using the name you stated (ie `my_deno_mod` in the example above) as follows:
 
-```javascript
+```typescript
 if (my_deno_mod.existsFile("/some/file/path.txt")) {
     console.log("File exists!");
 } else {
@@ -68,7 +70,7 @@ if (my_deno_mod.existsFile("/some/file/path.txt")) {
 }
 ```
 
-## Module Overview
+## Modules Overview
 
 The current modules inclided, and a brief description of their purpose is below. For more extensive information on each
 module, see the source code itself, as that includes additional comments:
@@ -79,6 +81,7 @@ module, see the source code itself, as that includes additional comments:
   exists. The function returns a `boolean` to confirm if the filename provided exists.
 - `type_guard.ts` contains a number of **type guard** function including: `isNumber` and `isNumber`. These checks for a
   specific TypeScript type (string, number, etc) and affirms that type if its correct.
+- `to_title_case.ts` contains function `toTitleCaseFirst` used to capitalise the first character of a string.
 
 ## License
 
