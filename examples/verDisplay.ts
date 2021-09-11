@@ -1,6 +1,6 @@
-// deno run --allow-read verDisplay.ts
+// deno run --allow-read cli_version.ts
 //
-import { displayVersion } from "https://raw.githubusercontent.com/wiremoons/cli_version/0.1.1/cli_version.ts";
+import { cliVersion } from "https://raw.githubusercontent.com/wiremoons/deno_mod/0.4.0/mod.ts";
 
 console.log("Example outputs for: 'cli_version.ts' module.\n");
 
@@ -8,7 +8,7 @@ console.log("Example outputs for: 'cli_version.ts' module.\n");
 // first call - just uses the defaults specified in the module
 
 console.log("Program 'DEFAULT' version information is:");
-const versionData = await displayVersion();
+const versionData = await cliVersion();
 console.log(`${versionData}\nDone.\n`);
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
@@ -16,7 +16,7 @@ console.log(`${versionData}\nDone.\n`);
 // If any are not specified, the default values will be used instead.
 
 console.log("\nProgram 'CUSTOMISED' version information is:");
-const versionData2 = await displayVersion({
+const versionData2 = await cliVersion({
   version: "1.0.5",
   copyrightName: "Simon Rowe <wiremoons.com>",
   licenseUrl: "https://github.com/wiremoons/cli_version/",
@@ -38,7 +38,7 @@ const versionOptions = {
 console.log(
   "Program 'CUSTOMISE with all pre set object fields' version information is:",
 );
-const versionData3 = await displayVersion(versionOptions);
+const versionData3 = await cliVersion(versionOptions);
 console.log(`${versionData3}\nDone.\n`);
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
@@ -56,7 +56,7 @@ console.log(`${versionData3}\nDone.\n`);
 // console.log(
 //   "Program 'CUSTOMISE with limited pre set object fields' version information is:",
 // );
-// const versionData4 = await displayVersion(versionOptions2);
+// const versionData4 = await cliVersion(versionOptions2);
 // console.log(`${versionData4}\nDone.\n`);
 
 // ///////////////////////////////////////////////////////////////////////////////////////////////////
@@ -69,7 +69,7 @@ console.log(`${versionData3}\nDone.\n`);
 // console.log(
 //   "\nProgram 'CUSTOMISED with missing fields' version information is:",
 // );
-// const versionData5 = await displayVersion({
+// const versionData5 = await cliVersion({
 //   version: "2.0.5",
 //   licenseUrl: "https://github.com/wiremoons/cli_version/",
 // });
