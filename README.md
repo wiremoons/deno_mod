@@ -1,3 +1,6 @@
+[![MIT licensed](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/hyperium/hyper/master/LICENSE)
+![deno_mod - TESTS](https://github.com/wiremoons/deno_mod/workflows/deno_mod/badge.svg?branch=main)
+
 # deno_mod
 
 A collection of modules written in TypeScript for common Deno programming tasks.
