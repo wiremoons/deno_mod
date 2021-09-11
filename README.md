@@ -1,5 +1,5 @@
 [![MIT licensed](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/hyperium/hyper/master/LICENSE)
-![deno_mod - TESTS](https://github.com/wiremoons/deno_mod/workflows/deno_mod/badge.svg?branch=main)
+[![deno_mod](https://github.com/wiremoons/deno_mod/actions/workflows/deno_mod-build-deno.yml/badge.svg)](https://github.com/wiremoons/deno_mod/actions/workflows/deno_mod-build-deno.yml)
 
 # deno_mod
 
