@@ -28,9 +28,9 @@ import { toIMF } from "https://deno.land/std@0.106.0/datetime/mod.ts";
 import {
   isString,
   toTitleCaseFirst,
-} from "https://raw.githubusercontent.com/wiremoons/deno_mod/0.3.0/mod.ts";
+} from "https://raw.githubusercontent.com/wiremoons/deno_mod/0.4.0/mod.ts";
 
-/** Options for the function `displayVersion()` */
+/** Options for the function `cliVersion()` */
 export interface VersionOptions {
   version: string;
   copyrightName: string;
@@ -78,7 +78,7 @@ async function getFileModTime(filePath: string) {
  * @param licenseUrl : string Program web site where the license can be found. Example: 'https://github.com/<username_here>/'
  * @param crYear : string The year the copyright applies from. Example: '2021'
  */
-export async function displayVersion(
+export async function cliVersion(
   verData?: VersionOptions,
 ): Promise<string> {
   // create object verData - so defaults can be provided if required:
@@ -120,6 +120,6 @@ For licenses and further information visit:
 // MAIN
 //--------------------------------
 if (import.meta.main) {
-  const versionData = await displayVersion();
+  const versionData = await cliVersion();
   console.log(versionData);
 }

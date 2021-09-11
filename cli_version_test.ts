@@ -23,7 +23,7 @@ import {
 } from "https://deno.land/std@0.106.0/testing/asserts.ts";
 import { toIMF } from "https://deno.land/std@0.106.0/datetime/mod.ts";
 import { fromFileUrl } from "https://deno.land/std@0.106.0/path/mod.ts";
-import { displayVersion } from "./cli_version.ts";
+import { cliVersion } from "https://raw.githubusercontent.com/wiremoons/deno_mod/0.4.0/mod.ts";
 
 //--------------------------------
 // UTILITY FUNCTIONS
@@ -76,8 +76,8 @@ Deno.test("module is imported: 'fromFileUrl()'", () => {
   }
 });
 
-Deno.test("module is imported: 'displayVersion()'", () => {
-  if (!displayVersion) {
+Deno.test("module is imported: 'cliVersion()'", () => {
+  if (!cliVersion) {
     throw Error("missing module");
   }
 });
@@ -118,6 +118,6 @@ For licenses and further information visit:
  - https://deno.land/
  `;
   }
-  const verData: string = await displayVersion();
+  const verData: string = await cliVersion();
   assertEquals(verData, actual);
 });
