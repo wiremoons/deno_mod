@@ -121,5 +121,18 @@ For licenses and further information visit:
 //--------------------------------
 if (import.meta.main) {
   const versionData = await cliVersion();
+  console.log("\nDEFAULT OUTPUT:");
   console.log(versionData);
+
+  console.log("CUSTOMISED OUTPUT:");
+  // define the output options to use:
+  const versionOptions = {
+    version: "1.0.6",
+    copyrightName: "John Doe <example.com>",
+    licenseUrl: "https://github.com/example/my_application/",
+    crYear: "2022",
+  };
+  // call the `cliVersion` module function using the options configured as `versionOptions`
+  const versionData2 = await cliVersion(versionOptions);
+  console.log(versionData2);
 }
