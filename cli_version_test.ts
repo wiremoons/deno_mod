@@ -23,7 +23,7 @@ import {
 } from "https://deno.land/std@0.106.0/testing/asserts.ts";
 import { toIMF } from "https://deno.land/std@0.106.0/datetime/mod.ts";
 import { fromFileUrl } from "https://deno.land/std@0.106.0/path/mod.ts";
-import { cliVersion } from "https://raw.githubusercontent.com/wiremoons/deno_mod/0.4.0/mod.ts";
+import { cliVersion } from "./cli_version.ts";
 
 //--------------------------------
 // UTILITY FUNCTIONS
