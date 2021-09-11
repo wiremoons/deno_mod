@@ -15,11 +15,11 @@
 /** Type Guard for number */
 // deno-lint-ignore no-explicit-any
 export function isNumber(arg: any): arg is number {
-    return arg !== undefined;
+  return arg !== undefined && typeof arg === "number";
 }
 
 /** Type guard for string */
 // deno-lint-ignore no-explicit-any
 export function isString(arg: any): arg is string {
-    return arg !== undefined;
+  return arg !== undefined && typeof arg === "string";
 }
