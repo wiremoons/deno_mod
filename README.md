@@ -21,15 +21,15 @@ Below describes two approaches to including the `deno_mod` into a project using
 ### Versions tags
 
 Link to the `mod.ts` file in this GitHub repo using the module tag for the
-version that is to be used. In the example below the version tag `0.4.0` is
+version that is to be used. In the example below the version tag `0.5.0` is
 specified.
 
 The recommended approach is to choose a version so you are not impacted by any
 future changes unexpectedly. The example below explicitly states the **version
-tag** `0.4.0` instead:
+tag** `0.5.0` instead:
 
 ```typescript
-https://raw.githubusercontent.com/wiremoons/deno_mod/0.4.0/mod.ts
+https://raw.githubusercontent.com/wiremoons/deno_mod/0.5.0/mod.ts
 ```
 
 The import url for the **current version** is always:
@@ -49,7 +49,7 @@ import {
   existsDir,
   existsFile,
   isString,
-} from "https://raw.githubusercontent.com/wiremoons/deno_mod/0.4.0/mod.ts";
+} from "https://raw.githubusercontent.com/wiremoons/deno_mod/0.5.0/mod.ts";
 ```
 
 Any of the modules can then be accessed using their name as follows:
@@ -67,7 +67,7 @@ if (existsFile("/some/file/path.txt")) {
 Alternatively it is possible to import all the available modules:
 
 ```typescript
-import * as my_deno_mod from "https://raw.githubusercontent.com/wiremoons/deno_mod/0.4.0/mod.ts";
+import * as my_deno_mod from "https://raw.githubusercontent.com/wiremoons/deno_mod/0.5.0/mod.ts";
 ```
 
 Any module can then be accessed using the name you stated (ie `my_deno_mod` in

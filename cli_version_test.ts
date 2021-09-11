@@ -17,6 +17,10 @@
  * @code deno test --allow-read
  */
 
+//--------------------------------
+// MODULE IMPORTS
+//--------------------------------
+
 import {
   assertEquals,
   assertStringIncludes,

@@ -28,7 +28,7 @@ import { toIMF } from "https://deno.land/std@0.106.0/datetime/mod.ts";
 import {
   isString,
   toTitleCaseFirst,
-} from "https://raw.githubusercontent.com/wiremoons/deno_mod/0.4.0/mod.ts";
+} from "https://raw.githubusercontent.com/wiremoons/deno_mod/0.5.0/mod.ts";
 
 /** Options for the function `cliVersion()` */
 export interface VersionOptions {
