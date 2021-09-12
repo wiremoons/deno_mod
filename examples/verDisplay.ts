@@ -1,6 +1,6 @@
 // deno run --allow-read cli_version.ts
 //
-import { cliVersion } from "https://raw.githubusercontent.com/wiremoons/deno_mod/0.5.0/mod.ts";
+import { cliVersion } from "https://deno.land/x/deno_mod/mod.ts";
 
 console.log("Example outputs for: 'cli_version.ts' module.\n");
 
