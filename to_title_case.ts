@@ -1,7 +1,7 @@
 /**
  * @file to_title_case.ts
- * @module https://github.com/wiremoons/deno_mod/to_title_case.ts
- * @module     https://deno.land/x/deno_mod/mod.ts
+ * @source https://github.com/wiremoons/deno_mod/to_title_case.ts
+ * @source https://deno.land/x/deno_mod/to_title_case.ts
  * @brief Capitalise the first character of a string.
  *
  * @author     simon rowe <simon@wiremoons.com>

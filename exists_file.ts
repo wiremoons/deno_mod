@@ -1,7 +1,7 @@
 /**
  * @file exist_file.ts
- * @module https://github.com/wiremoons/deno_mod/exist_file.ts
- * @module     https://deno.land/x/deno_mod/mod.ts
+ * @source https://github.com/wiremoons/deno_mod/exists_file.ts
+ * @source https://deno.land/x/deno_mod/exists_file.ts
  * @brief Check if the provided path is for a file.
  *
  * @author     simon rowe <simon@wiremoons.com>

@@ -1,8 +1,8 @@
 /**
  * @file type_guard.ts
- * @module https://github.com/wiremoons/deno_mod/type_guard.ts
- * @module     https://deno.land/x/deno_mod/mod.ts
- * @brief Provide type guards for narrowing with TyepScript code.
+ * @source https://github.com/wiremoons/deno_mod/type_guard.ts
+ * @source https://deno.land/x/deno_mod/type_guard.ts
+ * @brief Provide type guards for narrowing with TypeScript code.
  *
  * @author     simon rowe <simon@wiremoons.com>
  * @license    open-source released under "MIT License"
