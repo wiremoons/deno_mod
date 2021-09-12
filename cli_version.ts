@@ -5,8 +5,8 @@
  *
  * @author     simon rowe <simon@wiremoons.com>
  * @license    open-source released under "MIT License"
- * @source     https://github.com/wiremoons/cli_version.ts
- * @module     https://deno.land/x/deno_mod/mod.ts
+ * @source     https://github.com/wiremoons/deno_mod/cli_version.ts
+ * @source     https://deno.land/x/deno_mod/cli_version.ts
  *
  * @date originally created: 24 Aug 2021
  * @date updated significantly: 31 Aug 2021
@@ -29,7 +29,7 @@ import { toIMF } from "https://deno.land/std@0.106.0/datetime/mod.ts";
 import {
   isString,
   toTitleCaseFirst,
-} from "https://raw.githubusercontent.com/wiremoons/deno_mod/0.5.0/mod.ts";
+} from "https://deno.land/x/deno_mod/mod.ts";
 
 /** Options for the function `cliVersion()` */
 export interface VersionOptions {
