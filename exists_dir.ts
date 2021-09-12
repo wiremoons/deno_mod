@@ -1,7 +1,7 @@
 /**
  * @file exist_dir.ts
- * @module https://github.com/wiremoons/deno_mod/exist_dir.ts
- * @module     https://deno.land/x/deno_mod/mod.ts
+ * @link https://github.com/wiremoons/deno_mod/exists_dir.ts
+ * @link https://deno.land/x/deno_mod/exists_dir.ts
  * @brief Check if the provided path is for a directory.
  *
  * @author     simon rowe <simon@wiremoons.com>
@@ -15,20 +15,20 @@
 
 /** Checks if `dirPath` is a valid directory at the given path */
 export async function existsDir(dirPath: string): Promise<boolean> {
-    if (dirPath.length > 0) {
-        try {
-            const fileInfo = await Deno.stat(dirPath);
-            return fileInfo.isDirectory;
-        } catch (err) {
-            console.error(
-                `\nError occurred when 'existsDir()' checked for: '${dirPath}'\nERROR MESSAGE: '${err}'.\n`,
-            );
-            return false;
-        }
-    } else {
-        console.error(
-            `\nERROR: invalid directory name provided as: '${dirPath}'.\n`,
-        );
-        return false;
+  if (dirPath.length > 0) {
+    try {
+      const fileInfo = await Deno.stat(dirPath);
+      return fileInfo.isDirectory;
+    } catch (err) {
+      console.error(
+        `\nError occurred when 'existsDir()' checked for: '${dirPath}'\nERROR MESSAGE: '${err}'.\n`,
+      );
+      return false;
     }
+  } else {
+    console.error(
+      `\nERROR: invalid directory name provided as: '${dirPath}'.\n`,
+    );
+    return false;
+  }
 }
