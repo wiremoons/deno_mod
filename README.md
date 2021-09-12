@@ -1,5 +1,7 @@
 [![MIT licensed](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/hyperium/hyper/master/LICENSE)
 [![deno_mod](https://github.com/wiremoons/deno_mod/actions/workflows/deno_mod-build-deno.yml/badge.svg)](https://github.com/wiremoons/deno_mod/actions/workflows/deno_mod-build-deno.yml)
+[![tag](https://img.shields.io/github/v/release/wiremoons/deno_mod.svg)](https://github.com/wiremoons/deno_mod/releases)
+[![](https://img.shields.io/badge/deno-v1.13.2-green.svg)](https://github.com/denoland/deno)
 
 # deno_mod
 
@@ -96,12 +98,12 @@ that includes additional comments:
 - '`exists_file.ts`' : contains the function `existFile` that checks if the
   provided file system path is for a file that exists. The function returns a
   `boolean` to confirm if the filename provided exists.
-- `type_guard.ts` contains a number of **type guard** function including:
-  `isNumber` and `isNumber`. These checks for a specific TypeScript type
+- `type_guard.ts` : contains a number of **type guard** function including:
+  `isNumber` and `isString`. These checks for a specific TypeScript type
   (string, number, etc) and affirms that type if its correct.
-- `to_title_case.ts` contains function `toTitleCaseFirst` used to capitalise the
+- `to_title_case.ts` : contains function `toTitleCaseFirst` used to capitalise the
   first character of a string.
-- `cli_version.ts` contains function `cliVersion` used to display basic version
+- `cli_version.ts` : contains function `cliVersion` used to display basic version
   information for any command line application.
 
 ## Tests
