@@ -25,19 +25,43 @@ Below describes two approaches to including the `deno_mod` into a project using
 
 ### Versions tags
 
-Link to the `mod.ts` file in this GitHub repo using the module tag for the
-version that is to be used. In the example below the version tag `0.5.0` is
-specified.
+Link to the `mod.ts` file using the module tag for the version that is to be
+used. In the example below the version tag `0.6.0` is specified.
 
 The recommended approach is to choose a version so you are not impacted by any
 future changes unexpectedly. The example below explicitly states the **version
-tag** `0.5.0` instead:
+tag** `0.6.0` which is the current version.
+
+### Import from Deno.Land/X
+
+`deno.land/x` is a hosting service for _Deno_ scripts that can be access and
+searched from the Deno main web site under
+[Deno Third Party Modules](https://deno.land/x) link. The `deno.land/x` site
+caches releases of open source modules stored on GitHub and serves them at one
+easy to remember domain. Below are the names to use to access `deno_mod` modules
+from the `deno.land/x` site:
 
 ```typescript
-https://raw.githubusercontent.com/wiremoons/deno_mod/0.5.0/mod.ts
+https://deno.land/x/deno_mod@v0.6.0/mod.ts
 ```
 
 The import url for the **current version** is always:
+
+```typescript
+https://deno.land/x/deno_mod/mod.ts
+```
+
+### Import from GitHub
+
+Alternatively, if you prefer to import the Deno modules directly from this
+GitHub repo, the following `import` syntax can be used. JUst replace the link
+syntax shown below with any examples shown for `deno.land/x/deno_mod/`:
+
+```typescript
+https://raw.githubusercontent.com/wiremoons/deno_mod/0.6.0/mod.ts
+```
+
+The `import` url for the **current version** is always:
 
 ```typescript
 https://raw.githubusercontent.com/wiremoons/deno_mod/main/mod.ts
@@ -54,7 +78,7 @@ import {
   existsDir,
   existsFile,
   isString,
-} from "https://raw.githubusercontent.com/wiremoons/deno_mod/0.5.0/mod.ts";
+} from "https://deno.land/x/deno_mod@v0.6.0/mod.ts";
 ```
 
 Any of the modules can then be accessed using their name as follows:
@@ -72,7 +96,7 @@ if (existsFile("/some/file/path.txt")) {
 Alternatively it is possible to import all the available modules:
 
 ```typescript
-import * as my_deno_mod from "https://raw.githubusercontent.com/wiremoons/deno_mod/0.5.0/mod.ts";
+import * as my_deno_mod from "https://deno.land/x/deno_mod@v0.6.0/mod.ts";
 ```
 
 Any module can then be accessed using the name you stated (ie `my_deno_mod` in
@@ -90,7 +114,8 @@ if (my_deno_mod.existsFile("/some/file/path.txt")) {
 
 The current modules included, and a brief description of their purpose is below.
 For more extensive information on each module, see the source code itself, as
-that includes additional comments:
+that includes additional comments. The tests for each module also provide
+examples of usage. Current modules included are:
 
 - '`exists_dir.ts`' : contains the function `existDir` that checks if the
   provided file system path is for a directory that exists. The function returns
@@ -98,13 +123,13 @@ that includes additional comments:
 - '`exists_file.ts`' : contains the function `existFile` that checks if the
   provided file system path is for a file that exists. The function returns a
   `boolean` to confirm if the filename provided exists.
-- `type_guard.ts` : contains a number of **type guard** function including:
-  `isNumber` and `isString`. These checks for a specific TypeScript type
-  (string, number, etc) and affirms that type if its correct.
-- `to_title_case.ts` : contains function `toTitleCaseFirst` used to capitalise the
-  first character of a string.
-- `cli_version.ts` : contains function `cliVersion` used to display basic version
-  information for any command line application.
+- `type_guard.ts` : contains a number of type guard functions including:
+  `isNumber` and `isString`. These check for specific TypeScript types (ie
+  string, number, etc) and affirm that the type is correct.
+- `to_title_case.ts` : contains function `toTitleCaseFirst` used to capitalise
+  the first character of a string.
+- `cli_version.ts` : contains function `cliVersion` used to display basic
+  version information for any command line application.
 
 ## Tests
 

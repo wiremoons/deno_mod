@@ -1,6 +1,7 @@
 /**
  * @file to_title_case.ts
  * @module https://github.com/wiremoons/deno_mod/to_title_case.ts
+ * @module     https://deno.land/x/deno_mod/mod.ts
  * @brief Capitalise the first character of a string.
  *
  * @author     simon rowe <simon@wiremoons.com>
@@ -22,6 +23,6 @@
 
 /** Capitalise the first character of a string */
 export function toTitleCaseFirst(str: string): string {
-    if (str === undefined || str.length === 0) return str;
-    return str = str.charAt(0).toUpperCase() + str.substring(1);
+  if (str === undefined || str.length === 0) return str;
+  return str = str.charAt(0).toUpperCase() + str.substring(1);
 }

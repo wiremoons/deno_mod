@@ -1,6 +1,7 @@
 /**
  * @file exist_file.ts
  * @module https://github.com/wiremoons/deno_mod/exist_file.ts
+ * @module     https://deno.land/x/deno_mod/mod.ts
  * @brief Check if the provided path is for a file.
  *
  * @author     simon rowe <simon@wiremoons.com>
@@ -14,17 +15,17 @@
 
 /** Checks if `filePath` is a valid path to a file */
 export async function existsFile(filePath: string): Promise<boolean> {
-    if (filePath.length > 0) {
-        try {
-            const fileInfo = await Deno.stat(filePath);
-            return fileInfo.isFile;
-        } catch (err) {
-            console.error(
-                `\nError occurred when 'existsFile()' checked for: '${filePath}'\nERROR MESSAGE: '${err}'.\n`,
-            );
-            return false;
-        }
-    } else {
-        return false;
+  if (filePath.length > 0) {
+    try {
+      const fileInfo = await Deno.stat(filePath);
+      return fileInfo.isFile;
+    } catch (err) {
+      console.error(
+        `\nError occurred when 'existsFile()' checked for: '${filePath}'\nERROR MESSAGE: '${err}'.\n`,
+      );
+      return false;
     }
+  } else {
+    return false;
+  }
 }

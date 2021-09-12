@@ -1,6 +1,7 @@
 /**
  * @file type_guard.ts
  * @module https://github.com/wiremoons/deno_mod/type_guard.ts
+ * @module     https://deno.land/x/deno_mod/mod.ts
  * @brief Provide type guards for narrowing with TyepScript code.
  *
  * @author     simon rowe <simon@wiremoons.com>

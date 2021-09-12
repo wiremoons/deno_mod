@@ -6,6 +6,7 @@
  * @author     simon rowe <simon@wiremoons.com>
  * @license    open-source released under "MIT License"
  * @source     https://github.com/wiremoons/cli_version.ts
+ * @module     https://deno.land/x/deno_mod/mod.ts
  *
  * @date originally created: 24 Aug 2021
  * @date updated significantly: 31 Aug 2021
