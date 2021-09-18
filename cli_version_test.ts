@@ -57,31 +57,31 @@ async function getFileModTime(filePath: string) {
 
 // Check all the modules needed for the tests are imported
 
-Deno.test("module is imported: 'assertStringIncludes()'", () => {
+Deno.test("'cliVersion()' module is imported: 'assertStringIncludes()'", () => {
   if (!assertStringIncludes) {
     throw Error("missing module");
   }
 });
 
-Deno.test("module is imported: 'assertEquals()'", () => {
+Deno.test("'cliVersion()' module is imported: 'assertEquals()'", () => {
   if (!assertEquals) {
     throw Error("missing module");
   }
 });
 
-Deno.test("module is imported: 'toIMF()'", () => {
+Deno.test("'cliVersion()' module is imported: 'toIMF()'", () => {
   if (!toIMF) {
     throw Error("missing module");
   }
 });
 
-Deno.test("module is imported: 'fromFileUrl()'", () => {
+Deno.test("'cliVersion()' module is imported: 'fromFileUrl()'", () => {
   if (!fromFileUrl) {
     throw Error("missing module");
   }
 });
 
-Deno.test("module is imported: 'cliVersion()'", () => {
+Deno.test("'cliVersion()' module is imported: 'cliVersion()'", () => {
   if (!cliVersion) {
     throw Error("missing module");
   }
@@ -97,7 +97,7 @@ const denoArch = Deno.build.arch;
 
 // NOTE: the tests below will need to be updated if being run on different systems!
 
-Deno.test("'application test' : default", async () => {
+Deno.test("'cliVersion()' application test : default", async () => {
   const testModTime = await getFileModTime("./cli_version_test.ts");
   let actual = "";
 
