@@ -19,19 +19,19 @@ import { existsDir } from "./exists_dir.ts";
 
 // Check all the modules needed for the tests are imported
 
-Deno.test("module is imported: 'assertStringIncludes()'", () => {
+Deno.test("'existsDir()' module is imported: 'assertStringIncludes()'", () => {
   if (!assertStringIncludes) {
     throw Error("missing module");
   }
 });
 
-Deno.test("module is imported: 'assertEquals()'", () => {
+Deno.test("existsDir()' module is imported: 'assertEquals()'", () => {
   if (!assertEquals) {
     throw Error("missing module");
   }
 });
 
-Deno.test("module is imported: 'existsDir()'", () => {
+Deno.test("existsDir()' module is imported: 'existsDir()'", () => {
   if (!existsDir) {
     throw Error("missing module");
   }
@@ -41,20 +41,32 @@ Deno.test("module is imported: 'existsDir()'", () => {
 // APPLICATION TEST FUNCTIONS
 //--------------------------------
 
-Deno.test("'module tests' : exists directory (true)", async () => {
+Deno.test("'existsDir()' module tests : exists directory (true)", async () => {
   const actual1 = true;
   const test1: boolean = await existsDir("./examples");
   assertEquals(test1, actual1);
 });
 
-Deno.test("'module tests' : missing directory (false)", async () => {
+Deno.test("'existsDir()' module tests : missing directory (false)", async () => {
   const actual2 = false;
   const test2: boolean = await existsDir("./non-existant");
   assertEquals(test2, actual2);
 });
 
-Deno.test("'module tests' : file not directory (false)", async () => {
+Deno.test("'existsDir()' module tests : file not directory (false)", async () => {
   const actual3 = false;
   const test3: boolean = await existsDir("./exists_dir.ts");
   assertEquals(test3, actual3);
+});
+
+Deno.test("'existsDir()' module tests : zero length path (false)", async () => {
+  const actual2 = false;
+  const test2: boolean = await existsDir("");
+  assertEquals(test2, actual2);
+});
+
+Deno.test("'existsDir()' module tests : empty path (false)", async () => {
+  const actual2 = false;
+  const test2: boolean = await existsDir(" ");
+  assertEquals(test2, actual2);
 });
