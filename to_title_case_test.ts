@@ -19,19 +19,19 @@ import { toTitleCaseFirst } from "./to_title_case.ts";
 
 // Check all the modules needed for the tests are imported
 
-Deno.test("module is imported: 'assertStringIncludes()'", () => {
+Deno.test("'to_title_case()' module is imported: 'assertStringIncludes()'", () => {
   if (!assertStringIncludes) {
     throw Error("missing module");
   }
 });
 
-Deno.test("module is imported: 'assertEquals()'", () => {
+Deno.test("'to_title_case()' module is imported: 'assertEquals()'", () => {
   if (!assertEquals) {
     throw Error("missing module");
   }
 });
 
-Deno.test("module is imported: 'toTitleCaseFirst()'", () => {
+Deno.test("'to_title_case()' module is imported: 'toTitleCaseFirst()'", () => {
   if (!toTitleCaseFirst) {
     throw Error("missing module");
   }
@@ -41,25 +41,25 @@ Deno.test("module is imported: 'toTitleCaseFirst()'", () => {
 // APPLICATION TEST FUNCTIONS
 //--------------------------------
 
-Deno.test("'module tests' : check sentence", async () => {
+Deno.test("'to_title_case()' module tests : check sentence", async () => {
   const actual1 = "Match this sentence.";
   const test1: string = await toTitleCaseFirst("match this sentence.");
   assertEquals(test1, actual1);
 });
 
-Deno.test("'module tests' : one letter", async () => {
+Deno.test("'to_title_case()' module tests : one letter", async () => {
   const actual2 = "M";
   const test2: string = await toTitleCaseFirst("m");
   assertEquals(test2, actual2);
 });
 
-Deno.test("'module tests' : check sentence - already capitalised", async () => {
+Deno.test("'to_title_case()' module tests : check sentence - already capitalised", async () => {
   const actual3 = "Match this sentence.";
   const test3: string = await toTitleCaseFirst("Match this sentence.");
   assertEquals(test3, actual3);
 });
 
-Deno.test("'module tests' : empty sentence", async () => {
+Deno.test("'to_title_case()' module tests : empty sentence", async () => {
   const actual4 = "";
   const test4: string = await toTitleCaseFirst("");
   assertEquals(test4, actual4);
