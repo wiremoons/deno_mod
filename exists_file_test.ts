@@ -53,6 +53,18 @@ Deno.test("'module tests' : missing file (false)", async () => {
   assertEquals(test2, actual2);
 });
 
+Deno.test("'module tests' : zero length path (false)", async () => {
+  const actual2 = false;
+  const test2: boolean = await existsFile("");
+  assertEquals(test2, actual2);
+});
+
+Deno.test("'module tests' : empty path (false)", async () => {
+  const actual2 = false;
+  const test2: boolean = await existsFile(" ");
+  assertEquals(test2, actual2);
+});
+
 Deno.test("'module tests' : missing file (false)", async () => {
   const actual3 = false;
   const test3: boolean = await existsFile("./non-existant_file.ts");
