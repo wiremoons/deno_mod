@@ -5,7 +5,7 @@
  * @brief A collection of modules written in TypeScript for common Deno programming tasks.
  *
  * @link https://deno.land/x/deno_mod/mod.ts
- * @link https://raw.githubusercontent.com/wiremoons/deno_mod/0.6.1/mod.ts
+ * @link https://raw.githubusercontent.com/wiremoons/deno_mod/0.6.2/mod.ts
  *
  * @author     simon rowe <simon@wiremoons.com>
  * @license    open-source released under "MIT License"
