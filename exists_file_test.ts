@@ -41,37 +41,37 @@ Deno.test("module is imported: 'existsFile()'", () => {
 // APPLICATION TEST FUNCTIONS
 //--------------------------------
 
-Deno.test("'module tests' : exist file (true)", async () => {
+Deno.test("'existsFile()' module tests : exist file (true)", async () => {
   const actual1 = true;
   const test1: boolean = await existsFile("./exists_file.ts");
   assertEquals(test1, actual1);
 });
 
-Deno.test("'module tests' : missing file (false)", async () => {
+Deno.test("'existsFile()' module tests : missing file (false)", async () => {
   const actual2 = false;
   const test2: boolean = await existsFile("./non-existant_file.ts");
   assertEquals(test2, actual2);
 });
 
-Deno.test("'module tests' : zero length path (false)", async () => {
+Deno.test("'existsFile()' module tests : zero length path (false)", async () => {
   const actual2 = false;
   const test2: boolean = await existsFile("");
   assertEquals(test2, actual2);
 });
 
-Deno.test("'module tests' : empty path (false)", async () => {
+Deno.test("'existsFile()' module tests : empty path (false)", async () => {
   const actual2 = false;
   const test2: boolean = await existsFile(" ");
   assertEquals(test2, actual2);
 });
 
-Deno.test("'module tests' : missing file (false)", async () => {
+Deno.test("'existsFile()' module tests : missing file (false)", async () => {
   const actual3 = false;
   const test3: boolean = await existsFile("./non-existant_file.ts");
   assertEquals(test3, actual3);
 });
 
-Deno.test("'module tests' : directory not file (false)", async () => {
+Deno.test("'existsFile()' module tests : directory not file (false)", async () => {
   const actual4 = false;
   const test4: boolean = await existsFile("./examples");
   assertEquals(test4, actual4);
