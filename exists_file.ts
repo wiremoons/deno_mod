@@ -15,17 +15,20 @@
 
 /** Checks if `filePath` is a valid path to a file */
 export async function existsFile(filePath: string): Promise<boolean> {
-  if (filePath.length > 0) {
-    try {
-      const fileInfo = await Deno.stat(filePath);
-      return fileInfo.isFile;
-    } catch (err) {
-      console.error(
-        `\nError occurred when 'existsFile()' checked for: '${filePath}'\nERROR MESSAGE: '${err}'.\n`,
-      );
-      return false;
-    }
-  } else {
+  if (filePath.length < 1) {
+    console.error(
+      `\nERROR: zero length file name provided: '${filePath}'.\n`,
+    );
+    return false;
+  }
+
+  try {
+    const fileInfo = await Deno.stat(filePath);
+    return fileInfo.isFile;
+  } catch (err) {
+    console.error(
+      `\nError occurred when 'existsFile()' checked for: '${filePath}'\nERROR MESSAGE: '${err}'.\n`,
+    );
     return false;
   }
 }
