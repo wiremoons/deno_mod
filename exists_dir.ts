@@ -15,19 +15,19 @@
 
 /** Checks if `dirPath` is a valid directory at the given path */
 export async function existsDir(dirPath: string): Promise<boolean> {
-  if (dirPath.length > 0) {
-    try {
-      const fileInfo = await Deno.stat(dirPath);
-      return fileInfo.isDirectory;
-    } catch (err) {
-      console.error(
-        `\nError occurred when 'existsDir()' checked for: '${dirPath}'\nERROR MESSAGE: '${err}'.\n`,
-      );
-      return false;
-    }
-  } else {
+  if (dirPath.length < 1) {
     console.error(
-      `\nERROR: invalid directory name provided as: '${dirPath}'.\n`,
+      `\nERROR: zero length directory name provided: '${dirPath}'.\n`,
+    );
+    return false;
+  }
+
+  try {
+    const fileInfo = await Deno.stat(dirPath);
+    return fileInfo.isDirectory;
+  } catch (err) {
+    console.error(
+      `\nError occurred when 'existsDir()' checked for: '${dirPath}'\nERROR MESSAGE: '${err}'.\n`,
     );
     return false;
   }
