@@ -91,6 +91,10 @@ Deno.test("module is imported: 'cliVersion()'", () => {
 // APPLICATION TEST FUNCTIONS
 //--------------------------------
 
+// Obtain executing systems details for test output checks
+const denoVer = Deno.version.deno;
+const denoArch = Deno.build.arch;
+
 // NOTE: the tests below will need to be updated if being run on different systems!
 
 Deno.test("'application test' : default", async () => {
@@ -98,11 +102,11 @@ Deno.test("'application test' : default", async () => {
   let actual = "";
 
   // assumes this test is running on a local macOS M1 system
-  if (Deno.build.arch == "aarch64") {
+  if (denoArch == "aarch64") {
     actual = `
 Application 'cli_version_test.ts' is version '0.0.1 [DEFAULT]'.
 Last modified on: ${testModTime}
-Running Deno version '1.13.2' on 'Darwin [aarch64 with 8 CPU cores]'.
+Running Deno version '${denoVer}' on 'Darwin [aarch64 with 8 CPU cores]'.
 Copyright (c) 2021 [DEFAULT] Deno Dinosaur <deno@deno.land> [DEFAULT].
 
 For licenses and further information visit:
@@ -111,11 +115,11 @@ For licenses and further information visit:
  `;
   }
   // assumes this test is running is GitHub Action default Ubuntu system
-  if (Deno.build.arch == "x86_64") {
+  if (denoArch == "x86_64") {
     actual = `
 Application 'cli_version_test.ts' is version '0.0.1 [DEFAULT]'.
 Last modified on: ${testModTime}
-Running Deno version '1.13.2' on 'Linux [x86_64 with 2 CPU cores]'.
+Running Deno version '${denoVer}' on 'Linux [x86_64 with 2 CPU cores]'.
 Copyright (c) 2021 [DEFAULT] Deno Dinosaur <deno@deno.land> [DEFAULT].
 
 For licenses and further information visit:
