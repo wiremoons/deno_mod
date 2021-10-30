@@ -14,6 +14,24 @@ import {
 import { existsDir } from "./exists_dir.ts";
 
 //--------------------------------
+// PERMISSIONS CHECK
+//--------------------------------
+// request '--allow-read' permission if not granted with: deno test --allow-read
+const permCheck = await Deno.permissions.query({ name: "read" });
+if (permCheck.state === "prompt") {
+  console.log(
+    "\nTo avoid the permission prompt, run tests with:  deno test --allow-read\n",
+  );
+  const status = await Deno.permissions.request({ name: "read" });
+  if (status.state !== "granted") {
+    console.error(
+      "ERROR: deno requires '--allow-read' permission to run tests that check for a directories existence.",
+    );
+    Deno.exit(1);
+  }
+}
+
+//--------------------------------
 // MODULE IMPORT TEST FUNCTIONS
 //--------------------------------
 
