@@ -24,8 +24,8 @@
 import {
   basename,
   fromFileUrl,
-} from "https://deno.land/std@0.106.0/path/mod.ts";
-import { toIMF } from "https://deno.land/std@0.106.0/datetime/mod.ts";
+} from "https://deno.land/std@0.113.0/path/mod.ts";
+import { toIMF } from "https://deno.land/std@0.113.0/datetime/mod.ts";
 import {
   isString,
   toTitleCaseFirst,
@@ -74,6 +74,7 @@ async function getFileModTime(filePath: string) {
 
 /** Display version information for `Deno.mainModule` program.
  * Pass in the four (4) *VersionOptions* object parameters to modify the version text output:
+ * @param verData : VersionOptions interface
  * @param version : string The version of the program the output is to represent. Example: '0.0.1'
  * @param copyrightName : string Copyright holder for the program. Example: 'Deno Dinosaur <deno@deno.land>'
  * @param licenseUrl : string Program web site where the license can be found. Example: 'https://github.com/<username_here>/'
