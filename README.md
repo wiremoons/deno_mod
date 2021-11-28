@@ -26,11 +26,11 @@ Below describes two approaches to including the `deno_mod` into a project using
 ### Versions tags
 
 Link to the `mod.ts` file using the module tag for the version that is to be
-used. In the example below the version tag `0.7.3` is specified.
+used. In the example below the version tag `0.7.4` is specified.
 
 The recommended approach is to choose a version so you are not impacted by any
 future changes unexpectedly. The example below explicitly states the **version
-tag** `0.7.3` which is the current version.
+tag** `0.7.4` which is the current version.
 
 ### Import from Deno.Land/X
 
@@ -42,7 +42,7 @@ easy to remember domain. Below are the names to use to access `deno_mod` modules
 from the `deno.land/x` site:
 
 ```typescript
-https://deno.land/x/deno_mod@0.7.3/mod.ts
+https://deno.land/x/deno_mod@0.7.4/mod.ts
 ```
 
 The import url for the **current version** is always:
@@ -58,7 +58,7 @@ GitHub repo, the following `import` syntax can be used. JUst replace the link
 syntax shown below with any examples shown for `deno.land/x/deno_mod/`:
 
 ```typescript
-https://raw.githubusercontent.com/wiremoons/deno_mod/0.7.3/mod.ts
+https://raw.githubusercontent.com/wiremoons/deno_mod/0.7.4/mod.ts
 ```
 
 The `import` url for the **current version** is always:
@@ -78,7 +78,7 @@ import {
   existsDir,
   existsFile,
   isString,
-} from "https://deno.land/x/deno_mod@0.7.3/mod.ts";
+} from "https://deno.land/x/deno_mod@0.7.4/mod.ts";
 ```
 
 Any of the modules can then be accessed using their name as follows:
@@ -96,7 +96,7 @@ if (existsFile("/some/file/path.txt")) {
 Alternatively it is possible to import all the available modules:
 
 ```typescript
-import * as my_deno_mod from "https://deno.land/x/deno_mod@0.7.3/mod.ts";
+import * as my_deno_mod from "https://deno.land/x/deno_mod@0.7.4/mod.ts";
 ```
 
 Any module can then be accessed using the name you stated (ie `my_deno_mod` in
