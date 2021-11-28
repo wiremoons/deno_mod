@@ -10,8 +10,9 @@
 import {
   assertEquals,
   assertStringIncludes,
-} from "https://deno.land/std@0.113.0/testing/asserts.ts";
-import { isNumber, isString } from "./type_guard.ts";
+  isNumber,
+  isString,
+} from "./deps.ts";
 
 //--------------------------------
 // MODULE IMPORT TEST FUNCTIONS

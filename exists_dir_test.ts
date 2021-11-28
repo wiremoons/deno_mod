@@ -10,8 +10,8 @@
 import {
   assertEquals,
   assertStringIncludes,
-} from "https://deno.land/std@0.113.0/testing/asserts.ts";
-import { existsDir } from "./exists_dir.ts";
+  existsDir,
+} from "./deps.ts";
 
 //--------------------------------
 // PERMISSIONS CHECK

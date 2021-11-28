@@ -10,8 +10,8 @@
 import {
   assertEquals,
   assertStringIncludes,
-} from "https://deno.land/std@0.113.0/testing/asserts.ts";
-import { toTitleCaseFirst } from "./to_title_case.ts";
+  toTitleCaseFirst,
+} from "./deps.ts";
 
 //--------------------------------
 // MODULE IMPORT TEST FUNCTIONS

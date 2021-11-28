@@ -24,12 +24,11 @@
 import {
   basename,
   fromFileUrl,
-} from "https://deno.land/std@0.113.0/path/mod.ts";
-import { toIMF } from "https://deno.land/std@0.113.0/datetime/mod.ts";
-import {
+  toIMF,
   isString,
   toTitleCaseFirst,
-} from "https://deno.land/x/deno_mod/mod.ts";
+} from "./deps.ts";
+
 
 /** Options for the function `cliVersion()` */
 export interface VersionOptions {
@@ -77,7 +76,7 @@ async function getFileModTime(filePath: string) {
  * @param verData : VersionOptions interface
  * @param version : string The version of the program the output is to represent. Example: '0.0.1'
  * @param copyrightName : string Copyright holder for the program. Example: 'Deno Dinosaur <deno@deno.land>'
- * @param licenseUrl : string Program web site where the license can be found. Example: 'https://github.com/<username_here>/'
+ * @param licenseUrl : string Program website where the license can be found. Example: 'https://github.com/<username_here>/'
  * @param crYear : string The year the copyright applies from. Example: '2021'
  */
 export async function cliVersion(
