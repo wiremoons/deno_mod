@@ -1,7 +1,7 @@
 [![MIT licensed](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/hyperium/hyper/master/LICENSE)
 [![deno_mod](https://github.com/wiremoons/deno_mod/actions/workflows/deno_mod-build-deno.yml/badge.svg)](https://github.com/wiremoons/deno_mod/actions/workflows/deno_mod-build-deno.yml)
 [![tag](https://img.shields.io/github/v/release/wiremoons/deno_mod.svg)](https://github.com/wiremoons/deno_mod/releases)
-[![](https://img.shields.io/badge/deno-v1.15.3-green.svg)](https://github.com/denoland/deno)
+[![](https://img.shields.io/badge/deno-v1.18.0-green.svg)](https://github.com/denoland/deno)
 
 # deno_mod
 
