@@ -20,15 +20,15 @@ export {
     assert,
     assertEquals,
     assertStringIncludes,
-} from "https://deno.land/std@0.116.0/testing/asserts.ts";
+} from "https://deno.land/std@0.127.0/testing/asserts.ts";
 
 
 export {
     basename,
     fromFileUrl,
-} from "https://deno.land/std@0.116.0/path/mod.ts";
+} from "https://deno.land/std@0.127.0/path/mod.ts";
 
-export { toIMF } from "https://deno.land/std@0.116.0/datetime/mod.ts";
+export { toIMF } from "https://deno.land/std@0.127.0/datetime/mod.ts";
 
 /** Third Party dependencies */
 export {
@@ -38,4 +38,4 @@ export {
     existsFile,
     toTitleCaseFirst,
     cliVersion,
-} from "https://deno.land/x/deno_mod@0.7.4/mod.ts";
+} from "https://deno.land/x/deno_mod@0.7.5/mod.ts";
