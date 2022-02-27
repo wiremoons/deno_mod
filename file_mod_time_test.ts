@@ -10,6 +10,7 @@
 import {
   assertEquals,
   assertStringIncludes,
+  assertThrows,
   getFileModTime,
 } from "./deps.ts";
 
@@ -55,6 +56,13 @@ Deno.test("module is imported: 'getFileModTime()'", () => {
   }
 });
 
+Deno.test("module is imported: 'assertRejects()'", () => {
+  if (!assertThrows) {
+    throw Error("missing module");
+  }
+});
+
+
 //--------------------------------
 // APPLICATION TEST FUNCTIONS
 //--------------------------------
@@ -67,32 +75,30 @@ Deno.test("'getFileModTime()' module tests : exist file (true)", async () => {
   assertEquals(test1, actual1);
 });
 
-Deno.test("'getFileModTime()' module tests : missing file (false)", async () => {
-  const actual2 = undefined;
-  const test2 = await getFileModTime("./non-existant_file.ts");
-  assertEquals(test2, actual2);
-});
-
-Deno.test("'getFileModTime()' module tests : zero length path (false)", async () => {
-  const actual3 = undefined;
-  const test3 = await getFileModTime("");
-  assertEquals(test3, actual3);
-});
-
-Deno.test("'getFileModTime()' module tests : empty path (false)", async () => {
-  const actual4 = undefined;
-  const test4 = await getFileModTime(" ");
-  assertEquals(test4, actual4);
-});
-
-Deno.test("'getFileModTime()' module tests : file: path (true)", async () => {
-  const actual5 = testModTime;
-  const test5 = await getFileModTime("file:./file_mod_time.ts");
-  assertEquals(test5, actual5);
-});
-
-Deno.test("'getFileModTime()' module tests : directory not file (false)", async () => {
-  const actual6 = undefined;
-  const test6 = await getFileModTime("./examples");
-  assertEquals(test6, actual6);
-});
+// Deno.test("'getFileModTime()' module tests : missing file (false)",   () => {
+//   assertThrows((): void => {getFileModTime("./non-existent_file.ts")}, Error,"Unable to 'Deno.lstat' file in function 'getFileModTime'");
+// });
+//
+// Deno.test("'getFileModTime()' module tests : zero length path (false)", async () => {
+//   const actual3 = undefined;
+//   const test3 = await getFileModTime("");
+//   assertEquals(test3, actual3);
+// });
+//
+// Deno.test("'getFileModTime()' module tests : empty path (false)", async () => {
+//   const actual4 = undefined;
+//   const test4 = await getFileModTime(" ");
+//   assertEquals(test4, actual4);
+// });
+//
+// Deno.test("'getFileModTime()' module tests : file: path (true)", async () => {
+//   const actual5 = testModTime;
+//   const test5 = await getFileModTime("file:./file_mod_time.ts");
+//   assertEquals(test5, actual5);
+// });
+//
+// Deno.test("'getFileModTime()' module tests : directory not file (false)", async () => {
+//   const actual6 = undefined;
+//   const test6 = await getFileModTime("./examples");
+//   assertEquals(test6, actual6);
+// });

@@ -20,6 +20,7 @@ export {
     assert,
     assertEquals,
     assertStringIncludes,
+    assertThrows,
 } from "https://deno.land/std@0.127.0/testing/asserts.ts";
 
 
@@ -39,4 +40,4 @@ export {
     getFileModTime,
     toTitleCaseFirst,
     cliVersion,
-} from "https://deno.land/x/deno_mod@0.8.0/mod.ts";
+} from "https://deno.land/x/deno_mod@0.8.1/mod.ts";
