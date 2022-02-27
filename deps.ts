@@ -36,6 +36,7 @@ export {
     isString,
     existsDir,
     existsFile,
+    getFileModTime,
     toTitleCaseFirst,
     cliVersion,
-} from "https://deno.land/x/deno_mod@0.7.5/mod.ts";
+} from "https://deno.land/x/deno_mod@0.8.0/mod.ts";

@@ -25,6 +25,7 @@
 import {
   assertEquals,
   assertStringIncludes,
+  getFileModTime,
   toIMF,
   fromFileUrl,
   cliVersion,
@@ -49,26 +50,6 @@ if (permCheck.state === "prompt") {
   }
 }
 
-//--------------------------------
-// UTILITY FUNCTIONS
-//--------------------------------
-
-/** Obtain `filePath` modification date and time */
-async function getFileModTime(filePath: string) {
-  // check for URL path instead of OS path
-  if (filePath.startsWith("file:")) {
-    filePath = fromFileUrl(filePath);
-  }
-  try {
-    const fileInfo = await Deno.lstat(filePath);
-    if (fileInfo.isFile) {
-      const result = fileInfo.mtime;
-      return result ? toIMF(result) : "UNKNOWN";
-    }
-  } catch {
-    return "UNKNOWN";
-  }
-}
 
 //--------------------------------
 // MODULE IMPORT TEST FUNCTIONS
@@ -102,6 +83,12 @@ Deno.test("'cliVersion()' module is imported: 'fromFileUrl()'", () => {
 
 Deno.test("'cliVersion()' module is imported: 'cliVersion()'", () => {
   if (!cliVersion) {
+    throw Error("missing module");
+  }
+});
+
+Deno.test("'cliVersion()' module is imported: 'getFileModTime()'", () => {
+  if (!getFileModTime) {
     throw Error("missing module");
   }
 });

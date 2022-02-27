@@ -23,10 +23,9 @@
 //--------------------------------
 import {
   basename,
-  fromFileUrl,
-  toIMF,
   isString,
   toTitleCaseFirst,
+  getFileModTime,
 } from "./deps.ts";
 
 
@@ -48,23 +47,6 @@ export interface VersionOptions {
 // deno-lint-ignore no-explicit-any
 function isObject(arg: any): arg is VersionOptions {
   return arg !== undefined;
-}
-
-/** Obtain `filePath` modification date and time */
-async function getFileModTime(filePath: string) {
-  // check for URL path instead of OS path
-  if (filePath.startsWith("file:")) {
-    filePath = fromFileUrl(filePath);
-  }
-  try {
-    const fileInfo = await Deno.lstat(filePath);
-    if (fileInfo.isFile) {
-      const result = fileInfo.mtime;
-      return result ? toIMF(result) : "UNKNOWN";
-    }
-  } catch {
-    return "UNKNOWN";
-  }
 }
 
 //--------------------------------
@@ -105,7 +87,7 @@ export async function cliVersion(
 
   return (`
 Application '${basename(Deno.mainModule)}' is version '${verData?.version}'.
-Last modified on: ${await getFileModTime(Deno.mainModule)}
+Last modified on: ${await getFileModTime(Deno.mainModule) || "UNKNOWN"}
 Running Deno version '${Deno.version.deno}' on '${
     toTitleCaseFirst(Deno.build.os)
   } [${Deno.build.arch} with ${navigator.hardwareConcurrency} CPU cores]'.

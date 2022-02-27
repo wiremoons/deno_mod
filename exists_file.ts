@@ -13,6 +13,8 @@
  * @requires `--allow-read`
  */
 
+import {fromFileUrl} from "./deps.ts";
+
 /** Checks if `filePath` is a valid path to a file */
 export async function existsFile(filePath: string): Promise<boolean> {
   if (filePath.length < 1) {
@@ -20,6 +22,11 @@ export async function existsFile(filePath: string): Promise<boolean> {
       `\nERROR: zero length file name provided: '${filePath}'.\n`,
     );
     return false;
+  }
+
+  // check for URL path instead of OS path
+  if (filePath.startsWith("file:")) {
+    filePath = fromFileUrl(filePath);
   }
 
   try {

@@ -15,11 +15,9 @@
  * @details See each included module listed below for specific purpose and usage details.
  */
 
-// remove below if 0.7.5 not broken:
-//import {toTitleCaseFirst} from "./to_title_case.ts";
-
 export { cliVersion } from "./cli_version.ts";
 export { existsDir } from "./exists_dir.ts";
 export { existsFile } from "./exists_file.ts";
+export { getFileModTime } from "./file_mod_time.ts";
 export { toTitleCaseFirst } from "./to_title_case.ts";
 export { isNumber, isString } from "./type_guard.ts";

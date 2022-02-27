@@ -13,6 +13,8 @@
  * @requires `--allow-read`
  */
 
+import {fromFileUrl} from "./deps.ts";
+
 /** Checks if `dirPath` is a valid directory at the given path */
 export async function existsDir(dirPath: string): Promise<boolean> {
   if (dirPath.length < 1) {
@@ -20,6 +22,11 @@ export async function existsDir(dirPath: string): Promise<boolean> {
       `\nERROR: zero length directory name provided: '${dirPath}'.\n`,
     );
     return false;
+  }
+
+  // check for URL path instead of OS path
+  if (dirPath.startsWith("file:")) {
+    dirPath = fromFileUrl(dirPath);
   }
 
   try {
