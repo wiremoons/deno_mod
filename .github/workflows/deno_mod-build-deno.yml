@@ -54,7 +54,7 @@ jobs:
         echo "DONE INSTALL."
 
     # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v3
 
     # Runs any Deno tests first
     - name: Run Deno tests
