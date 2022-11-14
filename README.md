@@ -7,6 +7,31 @@
 
 A collection of modules written in TypeScript for common Deno programming tasks.
 
+## Modules Overview
+
+The current modules included, and a brief description of their purpose is below.
+For more extensive information on each module, see the source code itself, as
+that includes additional comments. The tests for each module also provide
+examples of usage. Current modules included are:
+
+- '`exists_dir.ts`' : contains the function `existDir()` that checks if the
+  provided file system path is for a directory which exists. The function returns
+  a `boolean` to confirm if the directory exists.
+- '`exists_file.ts`' : contains the function `existFile()` that checks if the
+  provided file system path for a file exists. The function returns a
+  `boolean` to confirm if the filename provided exists. This can be used as a replacement
+- for the depreciated Deno `exists() ` by using the recommended replacement approach of using 
+- `Stat` on the file directly and then check for errors. This function performs that task for you.
+- '`file_mod_time.ts`' : contains the function `getFileModTime()` that returns a
+  string with the date and time the file was last modified, or `undefined` otherwise.
+- `type_guard.ts` : contains a number of type guard functions including:
+  `isNumber()` and `isString()`. These check for specific TypeScript types (ie
+  string, number, etc) and affirm that the type is correct.
+- `to_title_case.ts` : contains function `toTitleCaseFirst()` used to capitalise
+  the first character of a string.
+- `cli_version.ts` : contains function `cliVersion()` used to display basic
+  version information for any command line application.
+
 ## Why Create More Deno Modules?
 
 The use of [Deno Standard Library](https://deno.land/std) or
@@ -109,29 +134,6 @@ if (my_deno_mod.existsFile("/some/file/path.txt")) {
   console.error("File not found.");
 }
 ```
-
-## Modules Overview
-
-The current modules included, and a brief description of their purpose is below.
-For more extensive information on each module, see the source code itself, as
-that includes additional comments. The tests for each module also provide
-examples of usage. Current modules included are:
-
-- '`exists_dir.ts`' : contains the function `existDir` that checks if the
-  provided file system path is for a directory that exists. The function returns
-  a `boolean` to confirm if the directory provided exists.
-- '`exists_file.ts`' : contains the function `existFile` that checks if the
-  provided file system path is for a file that exists. The function returns a
-  `boolean` to confirm if the filename provided exists.
-- '`file_mod_time.ts`' : contains the function `getFileModTime` that returns a 
-  string with the date and time the file was last modified, or `undefined` otherwise. 
-- `type_guard.ts` : contains a number of type guard functions including:
-  `isNumber` and `isString`. These check for specific TypeScript types (ie
-  string, number, etc) and affirm that the type is correct.
-- `to_title_case.ts` : contains function `toTitleCaseFirst` used to capitalise
-  the first character of a string.
-- `cli_version.ts` : contains function `cliVersion` used to display basic
-  version information for any command line application.
 
 ## Tests
 
